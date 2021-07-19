@@ -209,9 +209,7 @@ def window4():
 
             # Predicting the Test set result
             y_pred = regressor2.predict(x_test)
-            global acc2
-            acc2=regressor2.score(x_train, y_train)
-            print(acc2)
+        
 
         elif Algo_type =='polynomial Regression':
             for a in predictor:
@@ -267,15 +265,7 @@ def window4():
 
             y_pred = classifier.predict(x_test)
 
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc3
-            acc3= (sum(np.diag(cm)) / len(y_test))
+          
 
 
 
@@ -308,15 +298,7 @@ def window4():
             # Predicting the test set result
             y_pred = classifierk.predict(x_test)
 
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc4
-            acc4= (sum(np.diag(cm)) / len(y_test))
-            print(acc4)
+         
 
         elif Algo_type =="Naive Bayes Algorithm":
             for a in predictor:
@@ -346,15 +328,7 @@ def window4():
             # Predicting the test set result
             y_pred = classifiern.predict(x_test)
 
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc5
-            acc5 = (sum(np.diag(cm)) / len(y_test))
-
+          
 
         elif Algo_type =="SVM":
             for a in predictor:
@@ -382,15 +356,6 @@ def window4():
 
             # Predicting the test set result
             y_pred = classifiers.predict(x_test)
-
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc6
-            acc6 = (sum(np.diag(cm)) / len(y_test))
 
         elif Algo_type =="Decision Tree":
             for a in predictor:
@@ -420,15 +385,7 @@ def window4():
             # Predicting the test set result
             y_pred = classifierd.predict(x_test)
 
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc7
-            acc7= (sum(np.diag(cm)) / len(y_test))
-
+           
         elif Algo_type =="Random Forest":
             for a in predictor:
                 ad = data[a]
@@ -459,14 +416,7 @@ def window4():
             # Predicting the test set result
             y_pred = classifierr.predict(x_test)
 
-            # Creating the Confusion matrix
-            from sklearn.metrics import confusion_matrix
-            cm = confusion_matrix(y_test, y_pred)
-            len(y_test)
-
-            sum(np.diag(cm))
-            global acc8
-            acc8 = (sum(np.diag(cm)) / len(y_test))
+        
 
 
     model_creation = Button(window4, text="Train the model",bg="#3de0cd",command=getting_the_Algorithm).place(x=210, y=80, height=30, width=130)
@@ -594,7 +544,6 @@ def window4():
 
         predict3= Button(window5, text="output", bg='#41a65c',command=output ).place(x=230, y=290)
 
-        Accuracy = Button(window5, text="Accuracy of model", bg='#41a65c', command=Accuracy).place(x=200, y=180)
 
 
     predict= Button(window4, text="click to predict",bg='#41a65c',command=lable_creation).place(x=230, y=240)
