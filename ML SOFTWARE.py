@@ -173,16 +173,11 @@ def window4():
 
             regressor.fit(x_train, y_train)
 
-
-
-
             # Prediction of Test and Training set result
-
             y_pred = regressor.predict(x_test)
             y_pred
             global acc
             acc=regressor.score(x_train, y_train)
-
 
         elif Algo_type == 'Multiple Linear Regression':
             for a in predictor:
@@ -209,7 +204,9 @@ def window4():
 
             # Predicting the Test set result
             y_pred = regressor2.predict(x_test)
-        
+            global acc2
+            acc2=regressor2.score(x_train, y_train)
+            print(acc2)
 
         elif Algo_type =='polynomial Regression':
             for a in predictor:
@@ -244,9 +241,6 @@ def window4():
                 print(x)
             for b in target:
                 y = data[b]
-
-
-
             # Splitting the dataset into training and test set.
             from sklearn.model_selection import train_test_split
             x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=0)
@@ -264,10 +258,6 @@ def window4():
             classifierl.fit(x_train, y_train)
 
             y_pred = classifier.predict(x_test)
-
-          
-
-
 
         elif Algo_type == "K-NN Algorithm":
             for a in predictor:
@@ -298,7 +288,6 @@ def window4():
             # Predicting the test set result
             y_pred = classifierk.predict(x_test)
 
-         
 
         elif Algo_type =="Naive Bayes Algorithm":
             for a in predictor:
@@ -328,8 +317,6 @@ def window4():
             # Predicting the test set result
             y_pred = classifiern.predict(x_test)
 
-          
-
         elif Algo_type =="SVM":
             for a in predictor:
                 ad = data[a]
@@ -356,6 +343,7 @@ def window4():
 
             # Predicting the test set result
             y_pred = classifiers.predict(x_test)
+
 
         elif Algo_type =="Decision Tree":
             for a in predictor:
@@ -385,7 +373,7 @@ def window4():
             # Predicting the test set result
             y_pred = classifierd.predict(x_test)
 
-           
+
         elif Algo_type =="Random Forest":
             for a in predictor:
                 ad = data[a]
@@ -416,7 +404,6 @@ def window4():
             # Predicting the test set result
             y_pred = classifierr.predict(x_test)
 
-        
 
 
     model_creation = Button(window4, text="Train the model",bg="#3de0cd",command=getting_the_Algorithm).place(x=210, y=80, height=30, width=130)
@@ -538,13 +525,9 @@ def window4():
                     y_pred = classifierr.predict(input_data_reshaped)
                     print(y_pred)
                     messagebox.showinfo(target, y_pred)
-                    messagebox.configure(bg="#3de0cd")
 
 
-
-        predict3= Button(window5, text="output", bg='#41a65c',command=output ).place(x=230, y=290)
-
-
+        predict3= Button(window5, text="Predict", bg='#41a65c',command=output ).place(x=230, y=290)
 
     predict= Button(window4, text="click to predict",bg='#41a65c',command=lable_creation).place(x=230, y=240)
 
